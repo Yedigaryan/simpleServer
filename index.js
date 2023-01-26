@@ -5,7 +5,7 @@ const cors = require('cors')
 app.use(cors())
 
 app.get('/', (req, res) => {
-  res.json({success: 0})
+  res.json({success: 1})
 })
 
 app.listen(port, () => {
