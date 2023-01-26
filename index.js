@@ -1,11 +1,13 @@
-const http = require('http');
-const hostname = process.env.HOSTNAME || 'local'
 const port = process.env.PORT || '3000';
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end(JSON.stringify({success: true}));
-});
-server.listen(port, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+const express = require('express')
+const app = express()
+const cors = require('cors')
+app.use(cors())
+
+app.get('/', (req, res) => {
+  res.json({success: true})
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
