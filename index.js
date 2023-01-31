@@ -6,7 +6,7 @@ app.use(cors())
 let num = 0;
 
 
-app.get('/:id', (req, res) => {
+app.get('/change/:id', (req, res) => {
   if(req.params?.id) {
     num = Number(req.params.id);
   }
